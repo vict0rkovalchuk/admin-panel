@@ -7,21 +7,21 @@
       "element": "fire"
     },
     {
-      "id": 2,
-      "name": "Неизвестный герой",
-      "description": "Скрывающийся в тени",
-      "element": "wind"
-    },
-    {
       "id": 3,
       "name": "Морской герой",
       "description": "Как аквамен, но не из DC",
       "element": "water"
     },
     {
-      "id": "1f798b53-e42c-47da-ae81-1d66a38d0a82",
-      "name": "Victor",
-      "description": "kllk",
+      "id": "d5129ba0-7953-4af3-97a8-255e59b09029",
+      "name": "ij",
+      "description": "j",
+      "element": "Я владею элементом..."
+    },
+    {
+      "id": "a78972fa-3256-4a94-ba3c-28127e5c9d13",
+      "name": "5",
+      "description": "h",
       "element": "fire"
     }
   ],

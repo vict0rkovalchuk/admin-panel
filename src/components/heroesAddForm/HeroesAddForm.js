@@ -35,7 +35,10 @@ const HeroesAddForm = () => {
 
   useEffect(() => {
     dispatch(filtersFetching());
-    request('http://localhost:3001/filters')
+    // request('http://localhost:3001/filters')
+    request(
+      'https://my-json-server.typicode.com/vict0rkovalchuk/admin-panel/filters'
+    )
       .then(data => dispatch(filtersFetched(data)))
       .catch(() => dispatch(filtersFetchingError()));
 
@@ -66,7 +69,12 @@ const HeroesAddForm = () => {
       description: text,
       element
     };
-    request(`http://localhost:3001/heroes`, 'POST', JSON.stringify(newHero))
+    // request(`http://localhost:3001/heroes`, 'POST', JSON.stringify(newHero))
+    request(
+      `https://my-json-server.typicode.com/vict0rkovalchuk/admin-panel/heroes`,
+      'POST',
+      JSON.stringify(newHero)
+    )
       .then(data => console.log(data, 'Posted'))
       .then(dispatch(addHero(newHero)))
       .catch(err => console.log(err));

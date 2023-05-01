@@ -24,7 +24,10 @@ const HeroesList = () => {
 
   useEffect(() => {
     dispatch(heroesFetching());
-    request('http://localhost:3001/heroes')
+    // request('http://localhost:3001/heroes')
+    request(
+      'https://my-json-server.typicode.com/vict0rkovalchuk/admin-panel/heroes'
+    )
       .then(data => dispatch(heroesFetched(data)))
       .catch(() => dispatch(heroesFetchingError()));
 
@@ -33,7 +36,11 @@ const HeroesList = () => {
 
   const onDelete = useCallback(
     id => {
-      request(`http://localhost:3001/heroes/${id}`, 'DELETE')
+      // request(`http://localhost:3001/heroes/${id}`, 'DELETE')
+      request(
+        `https://my-json-server.typicode.com/vict0rkovalchuk/admin-panel/heroes/${id}`,
+        'DELETE'
+      )
         .then(data => console.log(data, 'Deleted'))
         .then(dispatch(deleteHero(id)))
         .catch(err => console.log(err));

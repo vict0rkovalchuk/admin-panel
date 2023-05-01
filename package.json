@@ -2,6 +2,7 @@
   "name": "hero_admin_panel",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://vict0rkovalchuk.github.io/admin-panel",
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^4.2.4",
@@ -22,7 +23,9 @@
     "start": "concurrently \"react-scripts start\" \"npx json-server db.json --port 3001\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "classnames": "^2.3.1"
+    "classnames": "^2.3.1",
+    "gh-pages": "^5.0.0"
   }
 }

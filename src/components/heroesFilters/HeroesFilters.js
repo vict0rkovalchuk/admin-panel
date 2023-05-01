@@ -19,7 +19,6 @@ const HeroesFilters = () => {
       <div className="card-body">
         <p className="card-text">Отфильтруйте героев по элементам</p>
         <div className="btn-group">
-          {/* <button className="btn btn-outline-dark active">Все</button> */}
           {filters.map((item, i) => (
             <button
               onClick={() => dispatch(activeFilterChanged(item.value))}

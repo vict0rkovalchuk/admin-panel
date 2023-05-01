@@ -27,7 +27,7 @@ import Spinner from '../spinner/Spinner';
 const HeroesAddForm = () => {
   const [name, setName] = useState('');
   const [text, setText] = useState('');
-  const [element, setElement] = useState('Я владею элементом...');
+  const [element, setElement] = useState('');
 
   const { filters, filtersLoadingStatus } = useSelector(state => state);
   const dispatch = useDispatch();
@@ -66,13 +66,13 @@ const HeroesAddForm = () => {
       description: text,
       element
     };
-    dispatch(addHero(newHero));
     request(`http://localhost:3001/heroes`, 'POST', JSON.stringify(newHero))
       .then(data => console.log(data, 'Posted'))
+      .then(dispatch(addHero(newHero)))
       .catch(err => console.log(err));
     setName('');
     setText('');
-    setElement('Я владею элементом...');
+    setElement('');
   };
 
   //   const loader = filtersLoadingStatus === 'loading' ? <Spinner /> : null;
@@ -86,9 +86,7 @@ const HeroesAddForm = () => {
   let content;
   if (filters && filters.length > 0) {
     content = filters.map((item, i) => {
-      if (item.value === 'all') {
-        return;
-      }
+      if (item.value === 'all') return;
 
       return (
         <option key={i} value={item.value}>
@@ -96,6 +94,7 @@ const HeroesAddForm = () => {
         </option>
       );
     });
+    content.unshift(<option value="">Я владею элементом...</option>);
   }
 
   return (
@@ -137,7 +136,7 @@ const HeroesAddForm = () => {
           Выбрать элемент героя
         </label>
         <select
-          defaultValue={element}
+          value={element}
           onChange={onInputChange}
           required
           className="form-select"

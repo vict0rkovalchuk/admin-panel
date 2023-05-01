@@ -13,16 +13,16 @@
       "element": "water"
     },
     {
-      "id": "d5129ba0-7953-4af3-97a8-255e59b09029",
-      "name": "ij",
-      "description": "j",
-      "element": "Я владею элементом..."
-    },
-    {
-      "id": "a78972fa-3256-4a94-ba3c-28127e5c9d13",
-      "name": "5",
+      "id": "b3e857e8-7339-4553-acd9-cc81e1c2a985",
+      "name": "Viktor Kovalchuk",
       "description": "h",
       "element": "fire"
+    },
+    {
+      "id": "62b6609b-7078-4967-b8c1-e5de4e1c541d",
+      "name": "Віктор",
+      "description": "h",
+      "element": "earth"
     }
   ],
   "filters": [

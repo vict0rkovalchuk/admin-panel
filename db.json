@@ -1,0 +1,55 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Первый герой",
+      "description": "Первый герой в рейтинге!",
+      "element": "fire"
+    },
+    {
+      "id": 3,
+      "name": "Морской герой",
+      "description": "Как аквамен, но не из DC",
+      "element": "water"
+    },
+    {
+      "id": "b3e857e8-7339-4553-acd9-cc81e1c2a985",
+      "name": "Viktor Kovalchuk",
+      "description": "h",
+      "element": "fire"
+    },
+    {
+      "id": "62b6609b-7078-4967-b8c1-e5de4e1c541d",
+      "name": "Віктор",
+      "description": "h",
+      "element": "earth"
+    }
+  ],
+  "filters": [
+    {
+      "value": "all",
+      "name": "Все",
+      "classNames": "btn-outline-dark"
+    },
+    {
+      "value": "fire",
+      "name": "Огонь",
+      "classNames": "btn-danger"
+    },
+    {
+      "value": "water",
+      "name": "Вода",
+      "classNames": "btn-primary"
+    },
+    {
+      "value": "wind",
+      "name": "Ветер",
+      "classNames": "btn-success"
+    },
+    {
+      "value": "earth",
+      "name": "Земля",
+      "classNames": "btn-secondary"
+    }
+  ]
+}

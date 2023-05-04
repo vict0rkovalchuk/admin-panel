@@ -39,7 +39,8 @@ const HeroesList = () => {
   const { request } = useHttp();
 
   useEffect(() => {
-    dispatch(heroesFetching());
+    // dispatch(heroesFetching());
+    dispatch('HEROES_FETCHING');
     // request('http://localhost:3001/heroes')
     request(
       'https://my-json-server.typicode.com/vict0rkovalchuk/admin-panel/heroes'

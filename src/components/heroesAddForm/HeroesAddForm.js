@@ -12,8 +12,6 @@ import { addHero } from '../../actions';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import Spinner from '../spinner/Spinner';
-
 // Задача для этого компонента:
 // Реализовать создание нового героя с введенными данными. Он должен попадать
 // в общее состояние и отображаться в списке + фильтроваться
@@ -83,26 +81,30 @@ const HeroesAddForm = () => {
     setElement('');
   };
 
-  //   const loader = filtersLoadingStatus === 'loading' ? <Spinner /> : null;
   const loader =
     filtersLoadingStatus === 'loading' ? (
-      <option>Загрузка элементов</option>
+      <option>Загрузка элементов...</option>
     ) : null;
   const error =
     filtersLoadingStatus === 'error' ? <option>Ошибка загрузки</option> : null;
 
   let content;
   if (filters && filters.length > 0) {
-    content = filters.map((item, i) => {
-      if (item.value === 'all') return;
-
-      return (
-        <option key={i} value={item.value}>
-          {item.name}
-        </option>
-      );
+    content = filters.map(({ value, name }) => {
+      if (value !== 'all') {
+        return (
+          <option key={value} value={value}>
+            {name}
+          </option>
+        );
+      }
+      return null;
     });
-    content.unshift(<option value="">Я владею элементом...</option>);
+    content.unshift(
+      <option key="" value="">
+        Я владею элементом...
+      </option>
+    );
   }
 
   return (

@@ -19,18 +19,19 @@ const HeroesFilters = () => {
       <div className="card-body">
         <p className="card-text">Отфильтруйте героев по элементам</p>
         <div className="btn-group">
-          {filters.map((item, i) => (
-            <button
-              onClick={() => dispatch(activeFilterChanged(item.value))}
-              key={i}
-              //   className={`btn ${item.classNames}`}
-              className={classNames('btn', `${item.classNames}`, {
-                active: item.value === activeFilter
-              })}
-            >
-              {item.name}
-            </button>
-          ))}
+          {filters.map(({ value, className, name }) => {
+            return (
+              <button
+                onClick={() => dispatch(activeFilterChanged(value))}
+                key={value}
+                className={classNames('btn', `${className}`, {
+                  active: value === activeFilter
+                })}
+              >
+                {name}
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

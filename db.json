@@ -23,27 +23,27 @@
     {
       "value": "all",
       "name": "Все",
-      "classNames": "btn-outline-dark"
+      "className": "btn-outline-dark"
     },
     {
       "value": "fire",
       "name": "Огонь",
-      "classNames": "btn-danger"
+      "className": "btn-danger"
     },
     {
       "value": "water",
       "name": "Вода",
-      "classNames": "btn-primary"
+      "className": "btn-primary"
     },
     {
       "value": "wind",
       "name": "Ветер",
-      "classNames": "btn-success"
+      "className": "btn-success"
     },
     {
       "value": "earth",
       "name": "Земля",
-      "classNames": "btn-secondary"
+      "className": "btn-secondary"
     }
   ]
 }

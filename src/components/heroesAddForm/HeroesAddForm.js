@@ -2,11 +2,7 @@ import { useHttp } from '../../hooks/http.hook';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  filtersFetching,
-  filtersFetched,
-  filtersFetchingError
-} from '../../actions';
+import { fetchFilters } from '../../actions';
 
 import { addHero } from '../../actions';
 
@@ -32,13 +28,7 @@ const HeroesAddForm = () => {
   const { request } = useHttp();
 
   useEffect(() => {
-    dispatch(filtersFetching());
-    // request('http://localhost:3001/filters')
-    request(
-      'https://my-json-server.typicode.com/vict0rkovalchuk/admin-panel/filters'
-    )
-      .then(data => dispatch(filtersFetched(data)))
-      .catch(() => dispatch(filtersFetchingError()));
+    dispatch(fetchFilters(request));
 
     // eslint-disable-next-line
   }, []);

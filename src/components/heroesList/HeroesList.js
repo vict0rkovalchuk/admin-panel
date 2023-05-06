@@ -4,12 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { createSelector } from 'reselect';
 
-import {
-  heroesFetching,
-  heroesFetched,
-  heroesFetchingError,
-  deleteHero
-} from '../../actions';
+import { fetchHeroes, deleteHero } from '../../actions';
 import HeroesListItem from '../heroesListItem/HeroesListItem';
 import Spinner from '../spinner/Spinner';
 
@@ -40,13 +35,8 @@ const HeroesList = () => {
 
   useEffect(() => {
     // dispatch(heroesFetching());
-    dispatch('HEROES_FETCHING');
-    // request('http://localhost:3001/heroes')
-    request(
-      'https://my-json-server.typicode.com/vict0rkovalchuk/admin-panel/heroes'
-    )
-      .then(data => dispatch(heroesFetched(data)))
-      .catch(() => dispatch(heroesFetchingError()));
+    // dispatch('HEROES_FETCHING');
+    dispatch(fetchHeroes(request));
 
     // eslint-disable-next-line
   }, []);

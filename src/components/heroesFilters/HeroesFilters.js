@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
 
-import { activeFilterChanged } from '../../actions';
+import { activeFilterChanged } from '../../components/heroesAddForm/filtersSlice';
 
 // Задача для этого компонента:
 // Фильтры должны формироваться на основании загруженных данных

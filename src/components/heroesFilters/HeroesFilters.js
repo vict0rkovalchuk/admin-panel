@@ -1,7 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
+import store from '../../store';
 
-import { activeFilterChanged } from '../../components/heroesAddForm/filtersSlice';
+import {
+  activeFilterChanged,
+  selectAll
+} from '../../components/heroesAddForm/filtersSlice';
 
 // Задача для этого компонента:
 // Фильтры должны формироваться на основании загруженных данных
@@ -11,9 +15,10 @@ import { activeFilterChanged } from '../../components/heroesAddForm/filtersSlice
 // Представьте, что вы попросили бэкенд-разработчика об этом
 
 const HeroesFilters = () => {
-  const { filters, activeFilter, filtersLoadingStatus } = useSelector(
+  const { activeFilter, filtersLoadingStatus } = useSelector(
     state => state.filters
   );
+  const filters = selectAll(store.getState());
   const dispatch = useDispatch();
 
   const loader =
